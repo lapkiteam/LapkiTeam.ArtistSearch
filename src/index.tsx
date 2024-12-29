@@ -1,9 +1,9 @@
-import React, { useState } from "react" // leave it in, otherwise it throws an error
+import React from "react" // leave it in, otherwise it throws an error
 import { createRoot } from "react-dom/client"
-import update from "immutability-helper"
 
 import "./styles.css"
 import { concat } from "./utils"
+import { Navbar } from "./components/navbar"
 
 function App() {
   return (
@@ -13,10 +13,45 @@ function App() {
           "h-screen",
           "flex",
           "flex-col",
+          "items-center",
           "gap-6",
         ])}
       >
-        Hello world!
+        <Navbar />
+        <div
+          className={concat([
+            "flex-grow",
+            "overflow-y-auto",
+
+          ])}
+        >
+          <img
+            className={concat([
+              "object-contain",
+              "max-w-fit",
+              "h-full",
+              "w-full",
+            ])}
+            src="./agent-and-ada-label.png"
+            alt="agent-and-ada-label"
+          />
+        </div>
+        <div
+        className={concat([
+          "overflow-y-auto",
+        ])}
+        >
+          <img
+            className={concat([
+              "object-contain",
+              "max-w-fit",
+              "h-full",
+              "w-full",
+            ])}
+            src="./details.png"
+            alt="details"
+          />
+        </div>
       </div>
     </>
   )
